@@ -49,66 +49,12 @@ You can create Matter switch devices that are not backed by a physical Tuya devi
 
 ---
 
-## HACS Custom Integration
-
-This repository also contains a Home Assistant custom integration at
-`custom_components/tuya_smart_life_local`. It logs in with the Smart Life /
-Tuya Smart mobile API, lets you select one or more homes, fetches each selected
-home's devices and local keys, then controls supported devices on the LAN.
-
-### HACS installation
-
-1. In HACS, open **Integrations**.
-2. Click **⋮ -> Custom repositories**.
-3. Add this repository URL and select category **Integration**:
-   ```
-   https://github.com/home-assistant-tools/tuya2matter
-   ```
-4. Install **Tuya Smart Life Local** and restart Home Assistant.
-5. Go to **Settings -> Devices & services -> Add integration** and search for
-   **Tuya Smart Life Local**.
-
-### Login and home selection
-
-The config flow asks for:
-
-| Field | Description |
-|---|---|
-| Email / Password | Smart Life or Tuya Smart account credentials. |
-| Country code | Phone country code used by the account, for example `84`. |
-| App id / client id | Mobile app client id recovered from the Android app. |
-| Native signing key text | Full native signing key, if already recovered. |
-| App secret + certificate SHA-256 + BMP secret2 key | Alternative inputs used to derive the native signing key. |
-| Package/app/SDK fields | Android app metadata used when signing mobile API requests. Defaults match the reversed Smart Life build used during development. |
-
-After a successful login, Home Assistant shows a multi-select list of Tuya
-homes. Select one or more homes to sync. The same selection can be changed later
-from the integration options.
-
-### Local control behavior
-
-- Device metadata, local keys, home membership, hub/child relationships, DPS
-  values, MAC addresses, and any cloud-provided IP fields are fetched through
-  the mobile API.
-- LAN control uses TinyTuya and Tuya protocol 3.3/3.4/3.5. Zigbee/BLE child
-  devices are addressed through their parent hub with the child's `node_id` /
-  `cid` when Tuya exposes that topology.
-- The integration listens for Tuya UDP broadcasts on ports `6666`, `6667`,
-  `6699`, and `7000`, and also runs a periodic TinyTuya LAN scan. Broadcast and
-  scan results update the device IP cache so local commands use the current LAN
-  address instead of stale cloud metadata.
-- The first HACS version exposes boolean DPS values as Home Assistant switch
-  entities. The local runtime keeps the richer metadata needed to add lights,
-  covers, sensors, locks, and fans later.
-
----
-
-## Add-on Installation
+## Installation
 
 1. In Home Assistant go to **Settings → Add-ons → Add-on Store**.
 2. Click **⋮ → Repositories** and add:
    ```
-   https://github.com/home-assistant-tools/tuya2matter
+   https://github.com/duongvanba/tuya2matter
    ```
 3. The **Tuya2Matter** add-on will appear in the store. Click **Install**.
 
