@@ -1,0 +1,56 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Tuya Smart Life Local",
+        "description": "Login with the mobile API, then select one or more homes to sync.",
+        "data": {
+          "email": "Email",
+          "password": "Password",
+          "country_code": "Country code",
+          "app_id": "Tuya mobile app id / client id",
+          "native_key_text": "Native signing key text",
+          "app_secret": "Tuya mobile app secret",
+          "cert_sha256": "APK certificate SHA-256",
+          "bmp_key": "BMP secret2 key",
+          "package_name": "Android package name",
+          "app_version": "App version",
+          "sdk_version": "SDK version",
+          "device_core_version": "Device core version",
+          "os_system": "Android OS version"
+        }
+      },
+      "select_homes": {
+        "title": "Select homes",
+        "description": "Choose one or more Tuya homes to sync into Home Assistant.",
+        "data": {
+          "selected_home_ids": "Homes"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not login or fetch homes from Tuya.",
+      "missing_app_material": "Provide native signing key text, or app secret + certificate SHA-256 + BMP secret2 key.",
+      "no_home_selected": "Select at least one home.",
+      "unknown": "Unexpected error."
+    },
+    "abort": {
+      "already_configured": "This Tuya account is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Select homes",
+        "description": "Choose one or more Tuya homes to sync into Home Assistant.",
+        "data": {
+          "selected_home_ids": "Homes"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not refresh Tuya homes. Showing the previously selected homes.",
+      "no_home_selected": "Select at least one home."
+    }
+  }
+}

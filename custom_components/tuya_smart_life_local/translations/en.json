@@ -1,0 +1,14 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Tuya Smart Life Local",
+        "description": "Login with the mobile API, then select one or more homes to sync."
+      },
+      "select_homes": {
+        "title": "Select homes",
+        "description": "Choose one or more Tuya homes to sync into Home Assistant."
+      }
+    }
+  }
+}

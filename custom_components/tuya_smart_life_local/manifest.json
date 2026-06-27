@@ -1,0 +1,12 @@
+{
+  "domain": "tuya_smart_life_local",
+  "name": "Tuya Smart Life Local",
+  "after_dependencies": ["network"],
+  "codeowners": ["@home-assistant-tools"],
+  "config_flow": true,
+  "documentation": "https://github.com/home-assistant-tools/tuya2matter",
+  "integration_type": "hub",
+  "iot_class": "local_push",
+  "requirements": ["tinytuya==1.18.1"],
+  "version": "0.1.0"
+}
